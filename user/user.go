@@ -3,17 +3,15 @@ package user
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	userstruct "smartdeals/struct"
 )
 
-func GetUser() {
-	r := gin.Default()
-	r.GET("/user", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "User are coming",
-		})
-	})
-	err := r.Run()
-	if err != nil {
-		return
-	} // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+func GetUser(c *gin.Context) {
+	user := []userstruct.User{
+		{ID: "122", Name: "Riad", Age: 23, Role: "admin"},
+		{ID: "132", Name: "Adil", Age: 23, Role: "admin"},
+		{ID: "142", Name: "Mico", Age: 23, Role: "admin"},
+		{ID: "152", Name: "Cyusa", Age: 23, Role: "admin"},
+	}
+	c.JSON(http.StatusOK, user)
 }

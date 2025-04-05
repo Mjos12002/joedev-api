@@ -1,12 +1,16 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin"
+	"smartdeals/taxi"
 	"smartdeals/user"
 )
 
-//TIP <p>To run your code, right-click the code and select <b>Run</b>.</p> <p>Alternatively, click
-// the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
-
 func main() {
-	user.GetUser()
+
+	router := gin.Default()
+	router.GET("/user", user.GetUser)
+	router.GET("/taxi", taxi.GetTaxi)
+	router.Run("localhost:8080")
+
 }
