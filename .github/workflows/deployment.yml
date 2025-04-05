@@ -20,5 +20,6 @@ jobs:
           port: ${{ secrets.SMARTDEALSPORT }}
           script: |
             cd ${{ env.APP_PATH }}
+            git checkout dev
             git add .
             git pull origin dev
