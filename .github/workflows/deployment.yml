@@ -1,0 +1,8 @@
+- name: executing remote ssh commands using password
+  uses: appleboy/ssh-action@v1
+  with:
+    host: ${{ secrets.SMARTDEALSHOST }}
+    username: ${{ secrets.SMARTDEALSUSERNAME }}
+    password: ${{ secrets.SMARTDEALSPASSWORD }}
+    port: ${{ secrets.SMARTDEALSPORT }}
+    script: whoami
