@@ -1,4 +1,4 @@
-name: remote ssh command
+name: Continuous Deployment
 env:
   APP_PATH: "/var/apps/api"
 on:
