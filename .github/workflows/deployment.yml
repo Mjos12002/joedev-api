@@ -1,6 +1,6 @@
 name: Continuous Deployment
 env:
-  APP_PATH: "/var/apps/api"
+  APP_PATH: "/var/apps/api/joedev-api"
 on:
   push:
     branches: [ "dev" ]
